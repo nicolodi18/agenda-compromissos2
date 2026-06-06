@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Compromissos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>📅 Agenda de Compromissos</h1>
+            <p>Organize suas tarefas e eventos de forma simples</p>
+        </header>
+
+        <section class="dashboard">
+
+            <div class="card-info">
+                <h2 id="total">0</h2>
+                <span>Total</span>
+            </div>
+
+            <div class="card-info">
+                <h2 id="pendentes">0</h2>
+                <span>Pendentes</span>
+            </div>
+
+            <div class="card-info">
+                <h2 id="concluidos">0</h2>
+                <span>Concluídos</span>
+            </div>
+
+        </section>
+
+        <section class="form-card">
+
+            <h2>Novo Compromisso</h2>
+
+            <form id="formCompromisso">
+
+                <input
+                    type="text"
+                    id="titulo"
+                    placeholder="Título do compromisso"
+                    required
+                >
+
+                <input
+                    type="date"
+                    id="data"
+                    required
+                >
+
+                <input
+                    type="time"
+                    id="hora"
+                    required
+                >
+
+                <textarea
+                    id="descricao"
+                    placeholder="Descrição"
+                ></textarea>
+
+                <button type="submit">
+                    Adicionar Compromisso
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="search-box">
+
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="🔍 Pesquisar compromisso..."
+            >
+
+        </section>
+
+    
+        <section>
+
+            <div id="listaCompromissos"></div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
