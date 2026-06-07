@@ -66,10 +66,10 @@ https://github.com/nicolodi18/agenda-compromissos2
 
 ## 👩‍💻 Desenvolvedores
 
-Ana Luiza Lima Nicolodi
-Alisson Silva Nascimento
-Júlio César Brito
-Mateus Dantas De Moraees
+Ana Luiza Lima Nicolodi/ 
+Alisson Silva Nascimento/ 
+Júlio César Brito/ 
+Mateus Dantas De Moraees/ 
 Levi Ramos Barbosa Santos
 
 ## Objetivo Acadêmico
