@@ -146,19 +146,36 @@ function atualizarTela() {
 
 async function concluir(id) {
 
-    const item = compromissos.find(c => c.id === id);
+    const item = compromissos.find(c => String(c.id) === String(id));
 
-    item.concluido = !item.concluido;
+    if (!item) {
+        alert("Compromisso não encontrado.");
+        return;
+    }
 
-    await fetch(`${API_URL}/${id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(item)
-    });
+    const atualizado = {
+        ...item,
+        concluido: !item.concluido
+    };
 
-    carregarCompromissos();
+    try {
+
+        await fetch(`${API_URL}/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(atualizado)
+        });
+
+        carregarCompromissos();
+
+    } catch (error) {
+
+        console.error(error);
+        alert("Erro ao atualizar compromisso.");
+
+    }
 }
 
 async function excluir(id) {
@@ -174,7 +191,9 @@ async function excluir(id) {
 
 function editar(id) {
 
-    const item = compromissos.find(c => c.id === id);
+    const item = compromissos.find(c => String(c.id) === String(id));
+
+    if (!item) return;
 
     document.getElementById("titulo").value = item.titulo;
     document.getElementById("data").value = item.data;
